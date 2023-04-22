@@ -1,0 +1,94 @@
+<div *ngIf="viewMode; else editable">
+  <div *ngIf="currentPedidos.id">
+    <h4>Tutorial</h4>
+    <div>
+      <label><strong>Title:</strong></label> {{ currentPedidos.title }}
+    </div>
+    <div>
+      <label><strong>Description:</strong></label>
+      {{ currentPedidos.description }}
+    </div>
+    <div>
+      <label><strong>Status:</strong></label>
+      {{ currentPedidos.published ? "Published" : "Pending" }}
+    </div>
+
+    <a
+      class="badge badge-warning"
+      routerLink="/tutorials/{{ currentPedidos.id }}"
+    >
+      Edit
+    </a>
+  </div>
+
+  <div *ngIf="!currentPedidos">
+    <br />
+    <p>Click em um pedido...</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div *ngIf="currentPedidos.id" class="edit-form">
+    <h4>Tutorial</h4>
+    <form>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="currentPedidos.title"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentPedidos.description"
+          name="description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ currentPedidos.published ? "Published" : "Pending" }}
+      </div>
+    </form>
+
+    <button
+      class="badge badge-primary mr-2"
+      *ngIf="currentPedidos.published"
+      (click)="updatePublished(false)"
+    >
+      UnPublish
+    </button>
+    <button
+      *ngIf="!currentPedidos.published"
+      class="badge badge-primary mr-2"
+      (click)="updatePublished(true)"
+    >
+      Publish
+    </button>
+
+    <button class="badge badge-danger mr-2" (click)="deletePedidos()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updatePedidos()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentPedidos.id">
+    <br />
+    <p>Cannot access this Tutorial...</p>
+  </div>
+</ng-template>
