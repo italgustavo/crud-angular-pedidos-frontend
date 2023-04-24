@@ -4,7 +4,7 @@
       <input
         type="text"
         class="form-control"
-        placeholder="Procure por nome"
+        placeholder="Buscar por nome"
         [(ngModel)]="title"
       />
       <div class="input-group-append">
@@ -19,26 +19,26 @@
     </div>
   </div>
   <div class="col-md-6">
-    <h4>Lista de pedidos</h4>
+    <h4>Lista de Produtos</h4>
     <ul class="list-group">
       <li
         class="list-group-item"
-        *ngFor="let pedido of pedidos; let i = index"
+        *ngFor="let produto of produtos; let i = index"
         [class.active]="i == currentIndex"
-        (click)="setActivePedidos(pedido, i)"
+        (click)="setActiveProdutos(produto, i)"
       >
-        {{ pedido.title }}
+        {{ produto.name }}
       </li>
     </ul>
 
-    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllPedidos()">
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllProdutos()">
       Remover todos
     </button>
   </div>
   <div class="col-md-6">
-    <app-pedidos-details
+    <app-produtos-details
       [viewMode]="true"
-      [currentPedidos]="currentPedidos"
-    ></app-pedidos-details>
+      [currentProdutos]="currentProdutos"
+    ></app-produtos-details>
   </div>
 </div>

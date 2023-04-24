@@ -1,1 +1,45 @@
-<p>add-produtos works!</p>
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          required
+          [(ngModel)]="produtos.name"
+          name="title"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Descrição</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="produtos.description"
+          name="description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Preço</label>
+        <input
+          class="form-control"
+          id="price"
+          required
+          [(ngModel)]="produtos.price"
+          name="price"
+        />
+      </div>
+      <button (click)="saveProdutos()" class="btn btn-success">Cadastrar</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Produto cadastrado com sucesso!</h4>
+      <button class="btn btn-success" (click)="newProdutos()">Add</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<div *ngIf="viewMode; else editable">
+  <div *ngIf="currentProdutos.id">
+    <h4>Tutorial</h4>
+    <div>
+      <label><strong>Nome:</strong></label> {{ currentProdutos.name }}
+    </div>
+    <div>
+      <label><strong>Description:</strong></label>
+      {{ currentProdutos.description }}
+    </div>
+    <div>
+      <label><strong>Preço:</strong></label>
+      {{ currentProdutos.price ? "Published" : "Pending" }}
+    </div>
+
+    <a
+      class="badge badge-warning"
+      routerLink="/produtos/{{ currentProdutos.id }}"
+    >
+      Edit
+    </a>
+  </div>
+
+  <div *ngIf="!currentProdutos">
+    <br />
+    <p>Por favor click no produto...</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div *ngIf="currentProdutos.id" class="edit-form">
+    <h4>Produtos</h4>
+    <form>
+      <div class="form-group">
+        <label for="title">Nome:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="currentProdutos.name"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentProdutos.description"
+          name="description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label><strong>Preço:</strong></label>
+        {{ currentProdutos.price ? "Published" : "Pending" }}
+      </div>
+    </form>
+
+    <button
+      class="badge badge-primary mr-2"
+      *ngIf="currentProdutos.price"
+      (click)="updatePrice(0)"
+    >
+      UnPublish
+    </button>
+    <button
+      *ngIf="!currentProdutos.price"
+      class="badge badge-primary mr-2"
+      (click)="updatePrice(1)"
+    >
+      Publish
+    </button>
+
+    <button class="badge badge-danger mr-2" (click)="updateProduto()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updateProduto()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentProdutos.id">
+    <br />
+    <p>Não pode acessar esse produto...</p>
+  </div>
+</ng-template>
