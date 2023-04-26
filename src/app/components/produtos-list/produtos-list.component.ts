@@ -37,8 +37,8 @@ export class ProdutosListComponent implements OnInit {
     this.currentIndex = -1;
   }
 
-  setActiveProdutos(tutorial: Produtos, index: number): void {
-    this.currentProdutos = tutorial;
+  setActiveProdutos(produto: Produtos, index: number): void {
+    this.currentProdutos = produto;
     this.currentIndex = index;
   }
 
@@ -66,7 +66,4 @@ export class ProdutosListComponent implements OnInit {
         error: (e) => console.error(e)
       });
   }
-
-
-
 }

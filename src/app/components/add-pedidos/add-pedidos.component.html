@@ -2,7 +2,7 @@
   <div class="submit-form">
     <div *ngIf="!submitted">
       <div class="form-group">
-        <label for="title">Title</label>
+        <label for="title">Nome</label>
         <input
           type="text"
           class="form-control"
@@ -14,7 +14,7 @@
       </div>
 
       <div class="form-group">
-        <label for="description">Description</label>
+        <label for="description">Descrição</label>
         <input
           class="form-control"
           id="description"
@@ -24,9 +24,8 @@
         />
       </div>
 
-      <button (click)="savePedidos()" class="btn btn-success">Submit</button>
-    </div>
-
+        <button (click)="savePedidos()" class="btn btn-success">Cadastrar</button>
+      </div>
     <div *ngIf="submitted">
       <h4>Pedido enviado com sucesso!</h4>
       <button class="btn btn-success" (click)="newPedidos()">Add</button>

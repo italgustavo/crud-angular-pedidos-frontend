@@ -1,11 +1,11 @@
 <div *ngIf="viewMode; else editable">
   <div *ngIf="currentPedidos.id">
-    <h4>Tutorial</h4>
+    <h4>Pedido</h4>
     <div>
-      <label><strong>Title:</strong></label> {{ currentPedidos.title }}
+      <label><strong>Nome:</strong></label> {{ currentPedidos.title }}
     </div>
     <div>
-      <label><strong>Description:</strong></label>
+      <label><strong>Descrição:</strong></label>
       {{ currentPedidos.description }}
     </div>
     <div>
@@ -15,7 +15,7 @@
 
     <a
       class="badge badge-warning"
-      routerLink="/tutorials/{{ currentPedidos.id }}"
+      routerLink="/pedidos/{{ currentPedidos.id }}"
     >
       Edit
     </a>
@@ -42,7 +42,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="description">Description</label>
+        <label for="description">Descrição</label>
         <input
           type="text"
           class="form-control"
@@ -54,7 +54,7 @@
 
       <div class="form-group">
         <label><strong>Status:</strong></label>
-        {{ currentPedidos.published ? "Published" : "Pending" }}
+        {{ currentPedidos.published ? "Concluído" : "Pendente" }}
       </div>
     </form>
 
@@ -70,11 +70,11 @@
       class="badge badge-primary mr-2"
       (click)="updatePublished(true)"
     >
-      Publish
+      Concluir
     </button>
 
     <button class="badge badge-danger mr-2" (click)="deletePedidos()">
-      Delete
+      Deletar
     </button>
 
     <button
@@ -82,13 +82,13 @@
       class="badge badge-success mb-2"
       (click)="updatePedidos()"
     >
-      Update
+      Atualizar
     </button>
     <p>{{ message }}</p>
   </div>
 
   <div *ngIf="!currentPedidos.id">
     <br />
-    <p>Cannot access this Tutorial...</p>
+    <p>Não e possivel acessar esse pedido!...</p>
   </div>
 </ng-template>
