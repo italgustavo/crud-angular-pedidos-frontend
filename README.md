@@ -1,29 +1,36 @@
 Este é um sistema simples de gestão de pedidos que utiliza Angular e Spring Boot para fornecer uma interface amigável e uma API RESTful eficiente. Com ele, é possível criar, visualizar e editar pedidos e produtos de forma fácil e rápida.
 
-###Funcionalidades
+## Funcionalidades
+
 Criar Novo Pedido
 
-Para criar um novo pedido, clique no botão "Novo Pedido" na tela de Pedidos e preencha os campos necessários.
+![gest3](https://user-images.githubusercontent.com/55145973/235495932-b96510b0-3244-4609-8b76-26ed8ece385c.jpg)
+
+Para criar um novo pedido, clique no botão "Novo Pedido" na tela de Novo Produto e preencha os campos necessários.
 
 
-###Visualizar Pedido
+## Visualizar Pedido
+
 Visualizar Pedido
+
+![gest2](https://user-images.githubusercontent.com/55145973/235495929-3f74dfa7-952d-4754-8569-eb2999613443.jpg)
 
 Para visualizar um pedido existente, clique sobre ele na lista de Pedidos. Isso irá exibir uma tela com os detalhes do pedido, incluindo os produtos associados a ele.
 
 
-Editar Pedido
+## Criar Novo Produto
+
+![Gest5](https://user-images.githubusercontent.com/55145973/235495939-eb0ecd8a-5adf-487b-908e-010ff332eea0.jpg)
+
+Para inserir um novo produto, clique no botão "Novo Produto" na tela de Novo Produto e preencha os campos necessários.
 
 
-Para cadastrar um novo produto, clique no botão "Novo Produto" na tela de Produtos e preencha os campos necessários.
+## Visualizar Produto
 
-Visualizar Produto
+![gest4](https://user-images.githubusercontent.com/55145973/235495936-bc7717e1-5fda-41e9-b434-18d156fa1e48.jpg)
 
 Para visualizar um produto existente, clique sobre ele na lista de Produtos. Isso irá exibir uma tela com os detalhes do produto, incluindo seu nome, descrição e preço.
 
-Editar Produto
-
-Para editar um produto existente, clique sobre ele na lista de Produtos e em seguida clique no botão "Editar". Isso irá abrir a tela de edição do produto, onde você poderá fazer as alterações necessárias.
 
 # GestaoPedidosFront
 
